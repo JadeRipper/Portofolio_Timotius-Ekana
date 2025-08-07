@@ -1,2 +1,6 @@
 # Portofolio_Timotius-Ekana
-Timotius Ekana's portofolio website
+Welcome to my portfolio!
+
+I'm an Informatics student with a passion for Cybersecurity and Artificial Intelligence.  
+
+Feel free to explore and connect!
