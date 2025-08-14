@@ -4,14 +4,22 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timotius Ekana Tejo Kesuma - Cybersecurity Portfolio</title>
+    <title>Timotius Ekana Tejo Kesuma - Portofolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="asset/Logo.png">
+    <link rel="shortcut icon" type="image/png" href="asset/Logo.png">
+    <link rel="apple-touch-icon" href="asset/Logo.png">
+
 </head>
 <body>
+    <div class="particles" id="particles"></div>
     <div class="matrix-bg"></div>
     
-    <header>
-        <div class="logo">&lt;/PORTFOLIO&gt;</div>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle Theme"></button>
+    
+    <header id="header">
+        <div class="logo" onclick="location.reload()">&lt;/PORTFOLIO&gt;</div>
         <div class="burger" id="burger">
             <span></span>
             <span></span>
@@ -28,12 +36,12 @@
     
     <main>
         <!-- Hero Section -->
-        <section id="home" class="hero fade-in">
+        <section id="home" class="hero">
             <div class="hero-content">
                 <h1>Timotius Ekana<br>Tejo Kesuma</h1>
-                <div class="hero-subtitle">$ whoami</div>
+                <div class="hero-subtitle typewriter">$ whoami</div>
                 <div class="hero-description">
-                    Cybersecurity enthusiast and Informatics student at Duta Wacana Christian University, specializing in AI-driven security solutions, penetration testing, and vulnerability assessment. I'm passionate about building secure digital infrastructures and exploring the intersection of artificial intelligence and cybersecurity.
+                    Enthusiastic Informatics student at Duta Wacana Christian University with a strong interest in software development, web applications, modern UI/UX design and Cyber Secuirty. Eager to learn and gain hands-on experience through real-world projects. Skilled in Python, JavaScript, PHP, MySQL, and Firebase, with growing knowledge in AI and Cyber Security. Passionate about collaborating with teams, adapting to new technologies, and continuously improving technical and problem-solving skills.
                 </div>
                 <div class="cta-buttons">
                     <a href="asset/CV_Timotius_Ekana.pdf" class="btn btn-primary">Download CV</a>
@@ -41,113 +49,121 @@
                 </div>
             </div>
             <div class="profile-container">
-                <img src="asset/profil.jpeg" alt="Timotius Ekana Profile" class="profile-image">
+                <div class="profile-wrapper" id="profileWrapper">
+                    <img src="asset/profil.jpeg" alt="Timotius Ekana Profile" class="profile-image" id="profileImage">
+                    <div class="shape-controls">
+                        <div class="shape-btn" onclick="changeShape('circle')" title="Circle">●</div>
+                        <div class="shape-btn" onclick="changeShape('square')" title="Square">■</div>
+                        <div class="shape-btn" onclick="changeShape('hexagon')" title="Hexagon">⬡</div>
+                        <div class="shape-btn" onclick="toggleFilter()" title="Toggle Filter">✨</div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="fade-in">
-            <h2 class="section-title">Technical Expertise</h2>
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Cybersecurity</h3>
+                    <h3>Programming Languages</h3>
                     <ul class="skill-list">
-                        <li>Penetration Testing</li>
-                        <li>Vulnerability Assessment</li>
-                        <li>SQL Injection Detection</li>
-                        <li>Cross-Site Scripting (XSS)</li>
-                        <li>Wazuh SIEM</li>
-                        <li>WPScan</li>
-                        <li>Metasploit Framework</li>
-                        <li>Directory Enumeration</li>
-                        <li>Information Gathering</li>
-                        <li>Network Security</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Programming & Development</h3>
-                    <ul class="skill-list">
-                        <li>Python Development</li>
+                        <li>Python</li>
                         <li>JavaScript (ES6+)</li>
-                        <li>PHP Backend</li>
-                        <li>HTML & CSS</li>
-                        <li>MySQL Database</li>
-                        <li>Firebase Integration</li>
+                        <li>PHP</li>
+                        <li>HTML5 & CSS3</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3>AI & Machine Learning</h3>
+                    <h3>Web & Software Development</h3>
                     <ul class="skill-list">
-                        <li>Pandas Data Analysis</li>
-                        <li>OpenCV Computer Vision</li>
-                        <li>TensorFlow/Keras</li>
-                        <li>Expert Systems Design</li>
-                        <li>Data Preprocessing</li>
+                        <li>Front-End Development (HTML, CSS, JavaScript)</li>
+                        <li>Back-End Development (PHP, MySQL, Firebase Realtime Database)</li>
+                        <li>Responsive UI/UX Design (Figma)</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3>Tools & Systems</h3>
+                    <h3>Databases & Cloud Services</h3>
                     <ul class="skill-list">
-                        <li>Linux Administration</li>
-                        <li>Kali Linux</li>
+                        <li>MySQL</li>
+                        <li>Firebase (Realtime Database, Authentication)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Cybersecurity Skills</h3>
+                    <ul class="skill-list">
+                        <li>Information Gathering</li>
+                        <li>Vulnerability Scanning (WPScan, Dirhunt)</li>
+                        <li>SQL Injection, Cross-Site Scripting (XSS)</li>
+                        <li>Basic Penetration Testing</li>
+                        <li>Log Monitoring & Threat Detection (Wazuh)</li>
+                        <li>Linux Command Line (Ubuntu, Kali Linux)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>AI & Data Science</h3>
+                    <ul class="skill-list">
+                        <li>Machine Learning (Scikit-learn, Pandas)</li>
+                        <li>Image Processing (OpenCV)</li>
+                        <li>Expert Systems (Forward Chaining, Certainty Factor)</li>
+                        <li>Data Preprocessing & Analysis</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>IoT & Tools</h3>
+                    <ul class="skill-list">
+                        <li>IoT Integration with ESP32 & Arduino</li>
+                        <li>Git & GitHub</li>
                         <li>VirtualBox</li>
-                        <li>ESP32 Development</li>
-                        <li>Arduino Programming</li>
-                        <li>Figma Design</li>
-                        <li>Wazuh</li>
-                        <li>Wireshark Analysis</li>
-                        <li>Docker Containers</li>
-                        <li>Network Protocols</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="fade-in">
+        <section id="projects">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>UKDW FACULTY OF BUSINESS ACCREDITATION SYSTEM</h3>
-                    <p>Developed a comprehensive web-based accreditation system aligned with LAMEMBA standards. Features include performance indicator integration, advanced database modeling, and intuitive UI/UX design for educational institutions. Built with PHP, MySQL, and modern web technologies for scalable institutional assessment.</p>
+                    <h3>UKDW Faculty of Business Accreditation System</h3>
+                    <p>Developed a responsive web-based accreditation system aligned with LAMEMBA standards. Implemented database modeling, performance indicator integration, and user-friendly UI/UX. Built with PHP, MySQL, and Firebase for scalability and real-time functionality.</p>
                 </div>
             </div>
         </section>
 
         <!-- Certificates Section -->
-        <section id="certificates" class="fade-in">
+        <section id="certificates">
             <h2 class="section-title">Certificates</h2>
-            <!-- TODO: Add certificate file paths -->
             <div class="certificates-list">
                 <div class="certificate-item">
                     <div class="certificate-header">
                         <div>
-                            <strong>Vice Chair of the Committee Robopark 2023</strong>
-                            <P>2023</P>
-                        </div>
-                        <a href="asset/certificate/RoboPark.pdf" class="download-btn" title="Download Certificate">Download</a>
-                    </div>
-                    <p>Led the organizing team for Robopark 2023, managing logistics, coordination, and stakeholder relations for a 3,000-visitor international tech event featuring workshops, competitions, and exhibitions.</p>
-                </div>
-                <div class="certificate-item">
-                    <div class="certificate-header">
-                        <div>
-                            <strong>Competition Committee PERMIKOMNAS National Seminar</strong>
+                            <strong>Vice Chair of the Committee – Robopark 2023</strong>
                             <p>2023</p>
                         </div>
-                        <a href="asset/certificate/Permikomnas_SeminarNasional.pdf" class="download-btn" title="Download Certificate">Download</a>
+                        <a href="asset/certificate/RoboPark.pdf" class="download-btn" title="Download Certificate">⬇ Download</a>
                     </div>
-                    <p>Led the UI/UX competition for 14 teams, overseeing judging, scheduling, documentation, and facilitating online finalist presentations for smooth execution.</p>
+                    <p>Led the organizing team for an international-scale tech event with 3,000+ visitors, managing logistics, coordination, and stakeholder communication.</p>
                 </div>
                 <div class="certificate-item">
                     <div class="certificate-header">
                         <div>
-                            <strong>Public Relations HMTI UKDW</strong>
+                            <strong>Event Organizer – Competition Committee, PERMIKOMNAS National Seminar</strong>
+                            <p>2023</p>
+                        </div>
+                        <a href="asset/certificate/Permikomnas_SeminarNasional.pdf" class="download-btn" title="Download Certificate">⬇ Download</a>
+                    </div>
+                    <p>Organizing committee member for the UI/UX competition, coordinating judging, scheduling, documentation, and online presentations.</p>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-header">
+                        <div>
+                            <strong>Public Relations – HMTI UKDW</strong>
                             <p>2023-2024</p>
                         </div>
-                        <a href="asset/certificate/HMTI-Humas.pdf" class="download-btn" title="Download Certificate">Download</a>
+                        <a href="asset/certificate/HMTI-Humas.pdf" class="download-btn" title="Download Certificate">⬇ Download</a>
                     </div>
-                    <p>Managed communications, content creation, and event coordination to boost student engagement and support a 3,000-participant international event.</p>
+                    <p>Managed communications, content creation, and event coordination for student engagement and large-scale campus events.</p>
                 </div>
             </div>
         </section>
@@ -173,7 +189,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="fade-in">
+        <section id="contact">
             <h2 class="section-title">Let's Connect</h2>
             <div class="contact-container">
                 <div class="contact-info">
@@ -188,7 +204,7 @@
                         <strong>Location:</strong> <a href="https://maps.app.goo.gl/arRxj2sw8rC8bBTf9">Magelang City 56123, Indonesia</a>
                     </div>
                     <div class="contact-item">
-                        <strong>Status:</strong> <span style="color: var(--cyber-green);">Available for opportunities</span>
+                        <strong>Status:</strong> <span style="color: var(--cyber-green);">Available for internship opportunities</span>
                     </div>
                 </div>
             </div>
@@ -196,8 +212,9 @@
     </main>
 
     <footer>
-        <p>© 2025 Timotius Ekana Tejo Kesuma. Securing the digital frontier, one system at a time.</p>
+        <p>© 2025 Timotius Ekana Tejo Kesuma.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
